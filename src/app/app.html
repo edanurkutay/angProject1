@@ -7,6 +7,19 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
+{{title}}
+
+<br>
+{{3 | currency}}
+
+<div style="background-color: bisque;">
+  <app-home></app-home>
+</div>
+
+  <app-home [pageName]="title()"></app-home>
+
+
+
 <style>
   :host {
     --bright-blue: oklch(51.01% 0.274 263.83);
@@ -337,6 +350,5 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
 
 <router-outlet />

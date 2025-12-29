@@ -1,0 +1,30 @@
+Interpolation Syntax {{...}} : Angular'da herhangi bir field ya da propert değerini bu operatör aracılığıyla
+HTML içerisinde kullanılmasına Text Interpolation, bu ifadeye ise Interpolation Syntax denir.
+
+- One-Way Data Binding gerçekleştirmektedir.
+
+Interpolation'da Neler Kullanılamaz?
+    - Yapısal olarak sadece field veya property değerlerini okumak ve böylece Template'e yansıtmak için kullanılır.
+    Bundan dolayı uygulamanın durumunu(state) değiştirebilecek herhangi bir işlem gerçekleştiremez.
+
+    - Bu mantıkla state değişikliğine neden olacak aşağıdakş keyword'ler ve işlemler Interpolation'da kullanılamaz;
+        - Assign operatörleri(=, +=, -=)
+        - new, typeof, instance vs.
+        - ; operatörü
+        - Increment(artırma) "++", Decrement(azaltma) "--" operatörleri
+        - Bitwise operatörler
+    NOT: Bunların dışında interpolitin'da iki değişkeni aritmetik işleme tabi tutabilir, string birleştirme yapabilir, 
+    template referansı kullanabilir veya herhangi bir fonksiyonu tetikleyebiliriz.
+
+Interpolation'da Script/HTML Kodları Çalıştırılabilir mi?
+    - Angular Interpolation ile DOM'a ekleyeceği içeriği her şeyden önce sterilize ederek Cross-Site Scripting Security Bugs (XSS)
+    hatalarına karşı önlem alır. Bu yüzden Interpolition ile gelen Script veya HTML kodları handle edilemez olduğu gibi yansıtılır.
+
+ngNonBindable Nedir?
+    - Interpolition operatörünün compile edilmemesini istediğiniz noktalarda kullanabiliriz.
+
+
+Interpolation İle Kullanılan Operatörler Nelerdir?
+    - Pipes {{text | uppercase}}
+    - Nullable operatörü (?)
+    - Non-Null Assertion operatörü (!)

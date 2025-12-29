@@ -1,0 +1,47 @@
+Çalışma Notları:
+
+Component: 
+- En temel mantıkta sayfaları oluşturmamızı sağlar.
+- app klasörü içerisinde bulundurulur.
+    - src/app/app.ts  → component logic,
+    - src/app/app.html  → template,
+    - src/app/app.scss  → style,
+    - src/app/app.spec.ts  → test, tüm bu dosyalar appcomponent parçalarını oluşturur
+
+- src/main.ts içerisinde "bootstrapApplication(App, appConfig)" satırı ile root component tanıtılır.
+- Oluşturulacak olan diğer componentler ana componentin üzerine kurulacaktır.
+
+DİP NOT: app.module.ts(NgModule) yeni sürümde yok ancak tamamen yok oldu anlamına gelmiyor. 
+Bunun yerine farklı dosyalar bu işi yapıyor. Bunu module konusunda daha detaylandıracağız. Şimdiki konumuz component.
+
+- Genellikle Componentler uygulamadaki sayfaların ta kendisidir.
+- Componentler birbirlerinden bağımsızdırlar.
+
+Component Parçaları:
+    - Template: Component'in görsel çalışmalarının yapıldığı parçasıdır. "src/app/app.html" 
+    Component ile 'templateUrl' field'ı üzerinden ilişkilendirilmektedir.
+    
+    - Style: Component'in css, scss, vs. gibi style türleriyle yapılan tasarım çalışmalarıdır. "src/app/app.scss" 
+    Component ile 'styleUrls' field'ı üzerinden ilişkilendirilmektedir.
+    
+    - Component Class: Component'in merkezi ve esas unsurudur. Uzantısı .ts olan dosyadır. "src/app/app.ts" 
+    Tüm JavaScript, TypeScript ve jQuery işlemleri bu parça üzerinde gerçekleştirilir ve component içerisinde kullanılacak değişkenlerle birlikte
+    fonksiyonlar bu sınıf üzerinde tanımlanır. 
+    Verilerin nasıl görüntüleneceği, fonksiyonların nasıl işleneceği vs. gibi işlevsellikler bu sınıf tarafından yönetilir.
+
+    - Selector: İlgili component'in uygulamanın herhangi bir noktasında nasıl çağrılacağını tanımlayan bir referans özelliğidir. 
+    Sadece HTML dosyalarında kullanılabilir. "<app-root></app-root>" //sellector böyle çağrılır.
+    Uygulamada herhangi bir component'in HTML'inde farklı component'in selector'ı çağrıldığında component compiler tarafından render edilir.
+
+    - Metadata: Componentin nasıl yapılandırılacağını ve nasıl kullanılacağını tanımlayan bir decorator'dür.
+    @Component({
+        ..
+        .. })
+    Bu decorator ile ilgili component'in: selector, template, stsyle bilgileri eşliğinde component'ler arası yönlendirme süreçlerindeki geçiş 
+    animasyonları (animations), component'in dışardan alabileceği değişkenler(inputs) veya dışardan emit'lenecek event'lar(outputs) vs. tanımlanabilir.    
+
+Bir Component Nasıl Oluşturulur?
+    "ng generate component [compName]"
+    "ng g c [compName]"
+    "ng generate component [compName]"
+    "ng g component [compName]"

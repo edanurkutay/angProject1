@@ -1,0 +1,39 @@
+Binding Nedir?
+
+2 merkezi(noktayı) birbirine bağlayan yapı.
+
+Angular'da, Component Class'ında bulunan bir modelin veya fonksiyonun, 
+Template'deki bir alan veya DOM nesnesi ile canlı olarak bağlantı oluşturmasını ifade eden bir kavramdır.
+
+Binding, bağlantı yapısına göre:
+    - Text Interpolations
+    - Property Binding
+    - Event Binding
+    - Two-Way Binding
+    - Attribute Binding
+    - Class Binding
+    - Style Binding
+
+    Text Interpolations : Template içerisinde Compenent Class'ındaki bir field/property değerinin yazdırılması. 
+     - Filed üzerinde olabilecek tüm değişiklikler template'deki alana yansıtılır.
+
+    Property Binding : Template içerisindeki HTML nesneleri veya directive'ler için Compenent Class'ında tanımlı olan 
+    verilerin property olarak direkt bağlanmasını sağlar.
+     - Bu yöntem sayesinde değer atamaları daha dinamik gerçekleştirilmiş olur.
+     - Ek olarak selector ile referans edilen component'lerin içerisindeki input property'lere de Property Binding 
+     üzerinden değer atanabilmektedir.
+
+    Event Binding : Template içerisindeki herhangi bir DOM nesnesinin, Component Class'ı içerisinde tanımlı olan bir fonksiyona
+    event olarak bağlanmasıdır. 
+     - ?
+    
+    Two-Way Binding : Birbirine bağlanmış iki şeyin (Template'deki HTML nesnesi ve Component Class'ı içerisindeki Field/Property) değerinin 
+    herhangi bir taraftan anlık değişmesiyle diğer tarafın da etkilenmesini sağlar.
+     - Genelde kullanıcıyla etkileşime giren form nesnelerinde kullanılır.
+    
+    Attribute Binding : HTML elemanlarının attribute'ları için değerleri doğrudan Component Class'ından verilmesini sağlayan yöntemdir.
+
+    Class ve Style Binding : Bir HTML öğesine CSS ile ilgili style veya class bildirilerinde bulunmak için kullanılan yöntemdir.
+    
+Change Detection Algoritması : Template'de bir event tetiklendiğinde veta kullanıcı bir modelin verisini değiştirdiğinde Component Class'ını bilgilendirmek
+ve Template ile senkronizasyonu sağlayabilmek için Change Detection Algoritması kullanılmaktadır. 
